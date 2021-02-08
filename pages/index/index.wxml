@@ -1,0 +1,55 @@
+
+  <!-- 轮播图区域 -->
+  <swiper class="banners" indicator-dots indicator-active-color="#d43c33" indicator-color="ivory" autoplay circular>
+    <swiper-item wx:for="{{bannerlist}}" wx:key="bannerId" wx:for-item="lunbotu">
+      <image src="{{lunbotu.pic}}"></image>
+    </swiper-item>
+    
+  </swiper>
+  <!-- 五个图标导航区 -->
+  <view class="navContainer">
+    <view class="navItem" bindtap="torecommend">
+      <text class="iconfont icon-meirituijian"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="navItem">
+      <text class="iconfont icon-gedan1"></text>
+      <text>歌单</text>
+    </view>
+    <view class="navItem">
+      <text class='iconfont icon-icon-ranking'></text>
+      <text>排行榜</text>
+    </view>
+    <view class="navItem">
+      <text class='iconfont icon-diantai'></text>
+      <text>电台</text>
+    </view>
+    <view class="navItem">
+      <text class='iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing'></text>
+      <text>直播</text>
+    </view>
+  </view>
+  <!-- 推荐歌曲区域 -->
+  <view>
+    <navHeader title="推荐歌曲" text="为你精心推荐"></navHeader>
+    <!-- 内容区域 -->
+    <scroll-view enable-flex scroll-x class="recommendScroll">
+      <view class="scrollItem" wx:for="{{recommendlist}}" wx:key="id" wx:for-item="tuijian">
+        <image src="{{tuijian.picUrl}}"></image>
+        <text>{{tuijian.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view>
+    <navHeader title="排行榜" text="热歌风向标"></navHeader>
+    <swiper class="ranking"  next-margin="50rpx">
+      <swiper-item class="rankingitem" wx:for="{{toplist}}">
+        <text>{{item.name}}</text>
+        <view class="musicitem" wx:for="{{item.tracks}}">
+          <image src="{{item.al.picUrl}}"></image>
+          <text class="count">{{index+1}}</text>
+          <text class="musicname">{{item.name}}</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>

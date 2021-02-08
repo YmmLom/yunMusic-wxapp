@@ -1,0 +1,29 @@
+<view class="recommendSongContainer">
+    <!-- 头部区域 -->
+    <view >
+        <image class="header" src="/static/image/recommendSong/recommendSong.jpg"></image>
+    </view>
+    <view class="recommendSongList">
+        <view class="listHeader">
+            <text>播放全部</text>
+            <text>今天是{{month}}月{{day}}日</text>
+            <text>多选</text>
+        </view>
+        <scroll-view class="scroll-view" scroll-y>
+        <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id" data-index="{{index}}" data-song="{{item.id}}" bindtap="ToSongDetail">
+            <image src="{{item.album.picUrl}}"/>
+            <view class="musicInfo">
+                <text class="musicName">{{item.name}}</text>
+                <view class="author">
+                    <text wx:for="{{item.artists}}">{{item.name}}</text>
+                </view>
+            </view>
+            <text class="iconfont icon-gengduo"></text>
+        </view>
+    </scroll-view>
+    </view>
+    <!-- 内容区域 -->
+    
+
+
+</view>

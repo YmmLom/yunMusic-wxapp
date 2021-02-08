@@ -1,0 +1,172 @@
+.songDetailContainer{
+    height: 100%;
+    background-color:#2D2D2D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.animate{
+    margin:0 40rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 为author设置滚动播放动画   开始*/
+/* .author{
+    width: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+}下次再写
+.animate{
+    color:white;
+    padding-left: 40rpx;
+    white-space: nowrap;
+    animation:5s wordsLoop linear infinite normal;
+}
+@keyframes wordsLoop {
+    from {
+        transform: translateX(200px);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+} */
+/************结束**************/
+
+.needle{
+    position: relative;
+    left: 56rpx;
+    top: -44rpx;
+    z-index: 1;
+    width: 192rpx;
+    height: 274rpx;
+    transform-origin: 40rpx 0;
+    transform: rotate(-20deg);
+    transition: transform 1s;
+}
+.needleRotate{
+    transform: rotate(5deg);
+}
+.circle{
+    position: relative;
+    z-index: 2;
+    width: 58rpx;
+    height: 58rpx;
+    border-radius: 50%;
+    background-color: aliceblue;
+    margin: 10rpx 0;
+    border: solid #2c2c2c69 10rpx;
+}
+.smallcircle{
+    position: absolute;
+    top: 19rpx;
+    left: 19rpx;
+    z-index: 3;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    background-color: #00000042;
+}
+.discContainer{
+    position: relative;
+    top: -170rpx;
+    width: 598rpx;
+    height: 598rpx;
+}
+.discAnimation{
+    animation: disc 6s linear 1s infinite;
+}
+
+@keyframes disc{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.discAnimation1{
+    animation: disc1 6s linear 1s infinite;
+}
+
+@keyframes disc1{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.disc{
+    width: 598rpx;
+    height: 598rpx;
+}
+.authorpic{
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 370rpx;
+    height: 370rpx;
+    border-radius: 50%;
+    box-shadow:0 0 20px 4px black
+}
+
+/* 底部控制播放区域  */
+
+.musicControl{
+    position: absolute;
+    bottom: 20rpx;
+    left: 0;
+    color: white;
+    display: flex;
+    width: 100%;
+}
+.musicControl text{
+    width: 20%;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 60rpx;
+}
+.musicControl text:nth-child(3){
+    font-size: 100rpx;
+}
+
+
+/* 进度条样式 */
+.progressControl{
+    display: flex;
+    position: absolute;
+    bottom: 140rpx;
+    width: 640rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+.barControl{
+    background-color: #aaaaaa;
+    width: 450rpx;
+    height: 4rpx;
+    margin: auto;
+}
+.currentTimeBar{
+    position: relative;
+    top:0;
+    left: 0;
+    width: 0rpx;
+    z-index: 1;
+    height: 4rpx;
+    background-color: #d43c33;
+}
+.whiteball{
+    position: absolute;
+    right: -6rpx;
+    top: -4rpx;
+    background-color: white;
+    border-radius: 50%;
+    width: 12rpx;
+    height: 12rpx;
+}
